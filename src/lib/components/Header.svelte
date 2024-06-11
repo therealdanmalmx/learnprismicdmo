@@ -24,8 +24,8 @@
 						<ButtonLink field={item.link}>{item.label}</ButtonLink>
 					{:else}
 						<PrismicLink field={item.link} class="inline-flex min-h-11 items-center"
-							>{item.label}</PrismicLink
-						>
+							>{item.label}
+						</PrismicLink>
 					{/if}
 				</li>
 			{/each}

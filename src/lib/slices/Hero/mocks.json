@@ -20,8 +20,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Labore amet tempor minim Lorem proident consequat sunt minim est eu excepteur. Consectetur culpa laboris nostrud excepteur aliquip eiusmod eu elit nisi excepteur velit tempor ad anim sit. Magna est velit nisi eu in quis exercitation proident irure minim nisi."
-						}
+							"text": "Labore amet tempor minim Lorem proident consequat sunt minim est eu excepteur. ",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -34,8 +36,8 @@
 			},
 			"button_label": {
 				"__TYPE__": "FieldContent",
-				"value": "himself",
-				"type": "Text"
+				"type": "Text",
+				"value": "Download Now"
 			},
 			"image": {
 				"origin": {
