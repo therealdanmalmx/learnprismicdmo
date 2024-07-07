@@ -1,16 +1,13 @@
 <script>
+	import Bounded from '$lib/components/Bounded.svelte';
 	import { PrismicRichText } from '@prismicio/svelte';
-	import Label from './Label.svelte';
 
 	/** @type {import("@prismicio/client").Content.RichTextSlice} */
 	export let slice;
 </script>
 
-<section class="">
-	<PrismicRichText
-		field={slice.primary.content}
-		components={{
-			label: Label
-		}}
-	/>
-</section>
+<Bounded>
+	<div class="prose prose-lg prose-slate prose-invert w-full">
+		<PrismicRichText field={slice.primary.content} />
+	</div>
+</Bounded>

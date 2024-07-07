@@ -3,9 +3,17 @@
 	import ButtonLink from '$lib/components/ButtonLink.svelte';
 	import { PrismicImage, PrismicLink, PrismicRichText, PrismicText } from '@prismicio/svelte';
 	import clsx from 'clsx';
+	import IconGear from '~icons/ph/gear-fine';
+	import IconArrows from '~icons/ph/arrows-clockwise-fill';
+	import SpanHeading from './SpanHeading.svelte';
 
 	/** @type {import("@prismicio/client").Content.ShowcaseSlice} */
 	export let slice;
+
+	const icons = {
+		gear: IconGear,
+		cycle: IconArrows,
+	};
 </script>
 
 <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation} class="relative">
@@ -14,7 +22,7 @@
 	/>
 	{#if slice.primary.heading}
 		<h2 class="text-balance text-center text-5xl font-medium md:text-7xl">
-			<PrismicRichText field={slice.primary.heading} />
+			<PrismicRichText field={slice.primary.heading} components={{ heading2: SpanHeading }} />
 		</h2>
 	{/if}
 	<div
@@ -23,7 +31,7 @@
 		<div>
 			{#if slice.primary.icon}
 				<div class="w-fit rounded-lg bg-violet-800 p-4 text-3xl">
-					{slice.primary.icon}
+					<svelte:component this={icons[slice.primary.icon]} />
 				</div>
 			{/if}
 			{#if slice.primary.subheading}
