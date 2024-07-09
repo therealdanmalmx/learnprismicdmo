@@ -38,7 +38,6 @@
 					trigger: '.showcase__heading',
 					start: 'top bottom-=40%',
 					toggleActions: 'play pause resume reverse',
-					markers: true,
 				},
 			}
 		);
