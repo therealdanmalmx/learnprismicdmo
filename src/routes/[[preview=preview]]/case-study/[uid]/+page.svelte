@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+	import gsap from 'gsap';
 	import { PrismicImage, PrismicText, SliceZone } from '@prismicio/svelte';
 
 	import { components } from '$lib/slices';
@@ -6,6 +8,33 @@
 	import TriangleGrid from '$lib/components/TriangleGrid.svelte';
 
 	export let data;
+
+	onMount(() => {
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		if (prefersReducedMotion) {
+			gsap.set('.logo-image', {
+				opacity: 1,
+			});
+
+			return;
+		}
+
+		gsap.fromTo(
+			'.logo-image',
+			{
+				opacity: 0,
+				y: 100,
+			},
+			{
+				opacity: 1,
+				y: 0,
+				duration: 1,
+				delay: 0.5,
+				ease: 'power2.inOut',
+			}
+		);
+	});
 </script>
 
 <Bounded>

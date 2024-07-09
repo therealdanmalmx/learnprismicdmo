@@ -19,6 +19,12 @@
 	};
 
 	onMount(() => {
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+		if (prefersReducedMotion) {
+			return;
+		}
+
 		gsap.registerPlugin(ScrollTrigger);
 
 		gsap.fromTo(
@@ -37,7 +43,7 @@
 			}
 		);
 		gsap.fromTo(
-			'.glow',
+			'.showcase__glow',
 			{ scale: 0.7, opacity: 0.1 },
 			{
 				scale: 1,
